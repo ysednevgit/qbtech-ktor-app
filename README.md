@@ -1,2 +1,0 @@
-# qbtech-ktor-app
- 
