@@ -43,6 +43,10 @@ fun Application.configureSecurity() {
 
                 val request = call.receive<TriangleRequest>()
 
+                if (request.a <= 0 || request.b <= 0) {
+                    call.respond("A or B should be > 0")
+                }
+
                 val hypotenuse = Math.sqrt(request.a.toDouble().pow(2) + request.b.toDouble().pow(2))
                 call.respond(TriangleResponse(hypotenuse))
             }
